@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import MarginInfer from "./MarginInfer";
 
 function AnimeItem() {
@@ -54,94 +54,122 @@ function AnimeItem() {
   }, []);
 
   return (
-    <section className="anime-des">
-      <MarginInfer />
-      <div className="container">
-        <div className="anime-item-box">
-          <h1 className="anime-item-title">{title}</h1>
-          <div className="details">
-            <div className="detail">
-              <div className="anime-image">
-                <img
-                  src={images?.jpg.large_image_url}
-                  alt="Title-image of this anime"
-                ></img>
+    <>
+      <section className="anime-des">
+        <MarginInfer />
+        <div className="container">
+          <div className="anime-item-box">
+            <h1 className="anime-item-title">{title}</h1>
+            <div className="details">
+              <div className="detail">
+                <div className="anime-image">
+                  <img
+                    src={images?.jpg.large_image_url}
+                    alt="Title-image of this anime"
+                  ></img>
+                </div>
+                <div className="anime-details">
+                  <p className="anime-details-info">
+                    <span className="details-info-prev">Aired: </span>
+                    <span>{aired?.string}</span>
+                  </p>
+                  <p className="anime-details-info">
+                    <span className="details-info-prev">Rating: </span>
+                    <span>{rating}</span>
+                  </p>
+                  <p className="anime-details-info">
+                    <span className="details-info-prev">Rank: </span>
+                    <span>{rank}</span>
+                  </p>
+                  <p className="anime-details-info">
+                    <span className="details-info-prev">Scored by: </span>
+                    <span>{score}</span>
+                  </p>
+                  <p className="anime-details-info">
+                    <span className="details-info-prev">Popularity: </span>
+                    <span>{popularity}</span>
+                  </p>
+                  <p className="anime-details-info">
+                    <span className="details-info-prev">Status: </span>
+                    <span>{status}</span>
+                  </p>
+                  <p className="anime-details-info">
+                    <span className="details-info-prev">Source: </span>
+                    <span>{source}</span>
+                  </p>
+                  <p className="anime-details-info">
+                    <span className="details-info-prev">Season: </span>
+                    <span>{season}</span>
+                  </p>
+                  <p className="anime-details-info">
+                    <span className="details-info-prev">Duration: </span>
+                    <span>{duration}</span>
+                  </p>
+                </div>
               </div>
-              <div className="anime-details">
-                <p className="anime-details-info">
-                  <span className="details-info-prev">Aired: </span>
-                  <span>{aired?.string}</span>
+              <div className="descriptio-box">
+                <h4 className="description-title">description</h4>
+                <p className="description">
+                  {showMore ? synopsis : synopsis?.substring(0, 200) + "..."}
                 </p>
-                <p className="anime-details-info">
-                  <span className="details-info-prev">Rating: </span>
-                  <span>{rating}</span>
-                </p>
-                <p className="anime-details-info">
-                  <span className="details-info-prev">Rank: </span>
-                  <span>{rank}</span>
-                </p>
-                <p className="anime-details-info">
-                  <span className="details-info-prev">Scored by: </span>
-                  <span>{score}</span>
-                </p>
-                <p className="anime-details-info">
-                  <span className="details-info-prev">Popularity: </span>
-                  <span>{popularity}</span>
-                </p>
-                <p className="anime-details-info">
-                  <span className="details-info-prev">Status: </span>
-                  <span>{status}</span>
-                </p>
-                <p className="anime-details-info">
-                  <span className="details-info-prev">Source: </span>
-                  <span>{source}</span>
-                </p>
-                <p className="anime-details-info">
-                  <span className="details-info-prev">Season: </span>
-                  <span>{season}</span>
-                </p>
-                <p className="anime-details-info">
-                  <span className="details-info-prev">Duration: </span>
-                  <span>{duration}</span>
-                </p>
+                <button
+                  className="description-btn"
+                  onClick={() => {
+                    setShowMore(!showMore);
+                  }}
+                >
+                  {showMore ? "Close" : "reade more"}
+                </button>
               </div>
-            </div>
-            <div className="descriptio-box">
-              <h4 className="description-title">description</h4>
-              <p className="description">
-                {showMore ? synopsis : synopsis?.substring(0, 200) + "..."}
-              </p>
-              <button
-                className="description-btn"
-                onClick={() => {
-                  setShowMore(!showMore);
-                }}
-              >
-                {showMore ? "Close" : "reade more"}
-              </button>
-            </div>
 
-            <div className="trailer">
-              <h3 className="trailer-title">Trailer</h3>
-              <div className="trailer-container">
-                {trailer?.embed_url && (
-                  <iframe
-                    src={trailer?.embed_url}
-                    title={title}
-                    frameBorder="0"
-                    allowFullScreen
-                    width="100%"
-                    height="300"
-                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  ></iframe>
-                )}
+              <div className="trailer">
+                <h3 className="trailer-title">Trailer</h3>
+                <div className="trailer-container">
+                  {trailer?.embed_url && (
+                    <iframe
+                      src={trailer?.embed_url}
+                      title={title}
+                      frameBorder="0"
+                      allowFullScreen
+                      width="100%"
+                      height="300"
+                      allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    ></iframe>
+                  )}
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <MarginInfer />
-    </section>
+        <MarginInfer />
+        <div className="container">
+          <div className="character-box">
+            <h3 className="trailer-title">Characters</h3>
+            <div className="characters">
+              {characters?.map((character, index) => {
+                const { role } = character;
+                const { images, name, mal_id } = character.character;
+                return (
+                  <Link
+                    className="link"
+                    to={`/character/${mal_id}`}
+                    key={index}
+                  >
+                    <div className="character-info">
+                      <img src={images?.jpg.image_url}></img>
+                      <h4>{name}</h4>
+                      <p>{role}</p>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+
+        <MarginInfer />
+      </section>
+    </>
   );
 }
 

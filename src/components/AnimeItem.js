@@ -112,6 +112,9 @@ function AnimeItem() {
                 title={title}
                 frameBorder="0"
                 allowFullScreen
+                width="800"
+                height="450"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               ></iframe>
             )}
           </div>

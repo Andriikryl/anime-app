@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import MarginInfer from "./MarginInfer";
 
 function AnimeItem() {
   const { id } = useParams();
@@ -54,6 +55,7 @@ function AnimeItem() {
 
   return (
     <section className="anime-des">
+      <MarginInfer />
       <div className="container">
         <div className="anime-item-box">
           <h1 className="anime-item-title">{title}</h1>
@@ -118,6 +120,7 @@ function AnimeItem() {
                 {showMore ? "Close" : "reade more"}
               </button>
             </div>
+
             <div className="trailer">
               <h3 className="trailer-title">Trailer</h3>
               <div className="trailer-container">
@@ -137,6 +140,7 @@ function AnimeItem() {
           </div>
         </div>
       </div>
+      <MarginInfer />
     </section>
   );
 }

@@ -1,6 +1,8 @@
 import React from "react";
 import Popular from "./Popular";
 import { useGlobalContext } from "../context/global";
+import UpComing from "./UpComing";
+import Arring from "./Airring";
 
 function HomePage() {
   const {
@@ -19,6 +21,10 @@ function HomePage() {
     switch (rendered) {
       case "popular":
         return <Popular rendered={rendered} />;
+      case "airing":
+        return <Arring rendered={rendered} />;
+      case "upcoming":
+        return <UpComing rendered={rendered} />;
       default:
         return <Popular rendered={rendered} />;
     }

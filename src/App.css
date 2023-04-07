@@ -7,7 +7,7 @@
 .popular__box{
     display: flex;
     flex-wrap: wrap;
-    gap: 100px;
+    gap: 70px;
     background-color: #2b2d42;
     overflow: hidden;
 }
@@ -23,8 +23,32 @@
   background-color: #2b2d42;
   margin-block-start: 20px;
   margin-inline: 20px;
-  flex-basis: 270px;
+  flex-basis: 370px;
   flex-grow: 1;
+  background-color: #8d99ae;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.sidebar-img-box{
+  background-color: #ef233c;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.top-title{
+  font-size: 20px;
+  color: white;
+  padding-block-start: 10px;
 }
 
 .popular-anime{
@@ -35,6 +59,9 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;
+    background-color: #8d99ae;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
 .popular-anime a {

@@ -16,8 +16,10 @@ function Sidebar() {
         {sorted.slice(0, 5).map((anime) => {
           return (
             <Link to={`/anime/${anime.mal_id}`} key={anime.mal_id}>
-              <img src={anime.images.jpg.large_image_url}></img>
-              <h5>{anime.title}</h5>
+              <div className="sidebar-img-box">
+                <img src={anime.images.jpg.large_image_url}></img>
+                <h5 className="top-title">{anime.title}</h5>
+              </div>
             </Link>
           );
         })}

@@ -6,12 +6,32 @@
 
 .popular__box{
     display: flex;
+    flex-wrap: wrap;
+    gap: 100px;
+    background-color: #2b2d42;
+    overflow: hidden;
+}
+
+.sidebar-title{
+  color: white;
+  font-size: 30px;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.sidebar{
+  background-color: #2b2d42;
+  margin-block-start: 20px;
+  margin-inline: 20px;
+  flex-basis: 270px;
+  flex-grow: 1;
 }
 
 .popular-anime{
+  flex-basis: 0;
+  flex-grow: 999;
     padding: 2rem;
     margin-block-start: 20px;
-    width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 2rem;

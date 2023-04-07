@@ -259,3 +259,66 @@ box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
     align-items: center;
     gap: 10px;
   }
+
+  .main-img{
+    display: inline-block;
+    padding: 2rem;
+    margin: 2rem 0;
+    background-color: #fff;
+    border-radius: 10px;
+    border: 5px solid #e5e7ed;
+    width: 400px;
+    background-color: #94777c;
+    mix-blend-mode:hard-light;
+  }
+  .main-img img{
+    object-fit: cover;
+    width: 100%;
+  }
+
+  .back{
+    position: absolute;
+    z-index: 20;
+    top: 2rem;
+    left: 2rem;
+    color: white;
+    padding: 10px;
+    background-color: #8d99ae;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 25px;
+    text-transform: uppercase;
+    box-shadow: 0px 10px 20px 2px rgba(0, 0, 0, 0.25);
+  }
+
+  .picture-box{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .inner-box{
+    background-color: #ef233c;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+
+  .gallery{
+    background-color: #2b2d42;
+  }
+
+  .box{
+    display: flex;
+    justify-content: center;
+  }
+
+
+
+
+
+
+
+
+
+
+  
